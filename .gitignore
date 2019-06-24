@@ -1,2 +1,3 @@
-node modules 
-.DS_STO
+node_modules
+.DS_Store
+.env
