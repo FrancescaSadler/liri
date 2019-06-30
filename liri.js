@@ -14,20 +14,20 @@ var spotify = new Spotify(keys.spotify);
 
 switch (operator) {
     case "do-what-it-says":
-        console.log("execute do what it says")
+        // console.log("execute do what it says")
         doWhat();
         break;
     case "movie-this":
         movieThis();
-        console.log("movie works")
+        // console.log("movie works")
         break;
     case "spotify-this-song":
         song();
-        console.log("spotify works")
+        // console.log("spotify works")
         break;
     case "concert-this":
         concertThis();
-        console.log("concert works")
+        // console.log("concert works")
         break;
     default:
         console.log("Choose correct operator");
@@ -49,13 +49,15 @@ switch (operator) {
 //finds artist specified
 function concertThis() {
     var queryUrl = "https://rest.bandsintown.com/artists/" + action + "/events?app_id=codingbootcamp";
-    console.log(queryUrl);
+    // console.log(queryUrl);
 
 
     axios.get(queryUrl).then(
         function (response) {
             // console log out desired info
-            console.log(response.data[0].venue.name);
+            console.log("This concert is playing at " + response.data[0].venue.name);
+            console.log("This concert is located in " + response.data[0].venue.city);
+            console.log("Date and time: " + response.data[0].datetime);
         })
         //for package 
         .catch(function (error) {
@@ -89,7 +91,7 @@ function concertThis() {
 
 function song() {
     if (!action) {
-        console.log("action is false");
+        // console.log("action is false");
         action = "The Sign by the Ace of Base"
     }
 
@@ -99,8 +101,9 @@ function song() {
         }
 
         console.log("The artist(s) name is " + data.tracks.items[0].artists[0].name);
-        console.log(data.tracks.items[0].name);
-        console.log(data.tracks.items[0].album.name);
+        console.log("Song name:  " + data.tracks.items[0].name);
+        console.log("Album: " + data.tracks.items[0].album.name);
+        console.log("Use this link to listen to the song: " + data.tracks.items[0].external_urls.spotify);
     });
 }
 
@@ -121,17 +124,19 @@ function song() {
 
 function movieThis () {
     var queryUrl = "http://www.omdbapi.com/?t=" + action + "&y=&plot=short&apikey=trilogy";
-    console.log(queryUrl);
+    // console.log(queryUrl);
 
     axios.get(queryUrl).then(
        function (response) {
-           console.log(response.data.Title);
-           console.log(response.data.Year);
-           console.log(response.data.Genre);
-           console.log(response.data.Actors);
-           console.log(response.data.Plot);
-           console.log(response.data.Country);
-           console.log(response.data[1].Value);
+           console.log("Movie title: " + response.data.Title);
+           console.log("This movie came out in " + response.data.Year);
+           console.log("Genre: "+ response.data.Genre);
+           console.log("Actors: " + response.data.Actors);
+           console.log("Plot: " + response.data.Plot);
+           console.log("This movie was produced in " + response.data.Country);
+           console.log("IMBD Rating: " + response.data.imdbRating);
+           console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
+           console.log("Language: " + response.data.Language);
 
        })
 
@@ -154,35 +159,7 @@ function movieThis () {
           });
 
       
-}
-// var queryUrl = "http://www.omdbapi.com/?t=" + action + "&y=&plot=short&apikey=trilogy";
-// console.log(queryUrl);
-
-// //ASK difference between package and no package? 
-// axios.get(queryUrl).then(
-// function(response) {
-//   // console log out desired info 
-//   console.log(response.data);
-// })
-// //for package 
-//   .catch(function(error) {
-//     if (error.response) {
-//       // The request was made and the server responded with a status code
-//       // that falls out of the range of 2xx
-//       console.log(error.response.data);
-//       console.log(error.response.status);
-//       console.log(error.response.headers);
-//     } else if (error.request) {
-//       // The request was made but no response was received
-//       // `error.request` is an object that comes back with details pertaining to the error that occurred.
-//       console.log(error.request);
-//     } else {
-//       // Something happened in setting up the request that triggered an Error
-//       console.log("Error", error.message);
-//     }
-//     console.log(error.config);
-//   });
-
+};
 
 //4. node liri.js do-what-it-says
 
@@ -199,28 +176,29 @@ function doWhat () {
         }
       
         // We will then print the contents of data
-        console.log(data);
+        // console.log(data);
 
         var arr = data.split (", ")
         operator = arr[0];
         action = arr[1];
-        console.log(arr);
+        // console.log(arr);
 
         switch (operator) {
             case "do-what-it-says":
-                console.log("execute do what it says")
+                // console.log("execute do what it says")
                 doWhat();
                 break;
             case "movie-this":
-                console.log("movie works")
+                // console.log("movie works")
+                movieThis();
                 break;
             case "spotify-this-song":
                 song();
-                console.log("spotify works")
+                // console.log("spotify works")
                 break;
             case "concert-this":
                 concertThis();
-                console.log("concert works")
+                // console.log("concert works")
                 break;
             default:
                 console.log("Choose correct operator");
