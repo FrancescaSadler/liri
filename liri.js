@@ -122,43 +122,43 @@ function song() {
 //    * Actors in the movie.
 
 
-function movieThis () {
+function movieThis() {
     var queryUrl = "http://www.omdbapi.com/?t=" + action + "&y=&plot=short&apikey=trilogy";
     // console.log(queryUrl);
 
     axios.get(queryUrl).then(
-       function (response) {
-           console.log("Movie title: " + response.data.Title);
-           console.log("This movie came out in " + response.data.Year);
-           console.log("Genre: "+ response.data.Genre);
-           console.log("Actors: " + response.data.Actors);
-           console.log("Plot: " + response.data.Plot);
-           console.log("This movie was produced in " + response.data.Country);
-           console.log("IMBD Rating: " + response.data.imdbRating);
-           console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
-           console.log("Language: " + response.data.Language);
+        function (response) {
+            console.log("Movie title: " + response.data.Title);
+            console.log("This movie came out in " + response.data.Year);
+            console.log("Genre: " + response.data.Genre);
+            console.log("Actors: " + response.data.Actors);
+            console.log("Plot: " + response.data.Plot);
+            console.log("This movie was produced in " + response.data.Country);
+            console.log("IMBD Rating: " + response.data.imdbRating);
+            console.log("Rotten Tomatoes Rating: " + response.data.Ratings[1].Value);
+            console.log("Language: " + response.data.Language);
 
-       })
+        })
 
-       .catch(function(error) {
+        .catch(function (error) {
             if (error.response) {
-              // The request was made and the server responded with a status code
-              // that falls out of the range of 2xx
-              console.log(error.response.data);
-              console.log(error.response.status);
-              console.log(error.response.headers);
+                // The request was made and the server responded with a status code
+                // that falls out of the range of 2xx
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
             } else if (error.request) {
-              // The request was made but no response was received
-              // `error.request` is an object that comes back with details pertaining to the error that occurred.
-              console.log(error.request);
+                // The request was made but no response was received
+                // `error.request` is an object that comes back with details pertaining to the error that occurred.
+                console.log(error.request);
             } else {
-              // Something happened in setting up the request that triggered an Error
-              console.log("Error", error.message);
+                // Something happened in setting up the request that triggered an Error
+                console.log("Error", error.message);
             }
             console.log(error.config);
-          });
+        });
 
-      
+
 };
 
 //4. node liri.js do-what-it-says
@@ -167,18 +167,18 @@ function movieThis () {
 // It should run spotify-this-song for "I Want it That Way," as follows the text in random.txt.
 // Edit the text in random.txt to test out the feature for movie-this and concert-this.
 
-function doWhat () {
-    fs.readFile("random.txt", "utf8", function(error, data) {
+function doWhat() {
+    fs.readFile("random.txt", "utf8", function (error, data) {
 
         // If the code experiences any errors it will log the error to the console.
         if (error) {
-          return console.log(error);
+            return console.log(error);
         }
-      
+
         // We will then print the contents of data
         // console.log(data);
 
-        var arr = data.split (", ")
+        var arr = data.split(", ")
         operator = arr[0];
         action = arr[1];
         // console.log(arr);
@@ -203,6 +203,6 @@ function doWhat () {
             default:
                 console.log("Choose correct operator");
         }
-    });   
-   
+    });
+
 }
