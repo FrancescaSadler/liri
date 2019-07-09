@@ -1,19 +1,52 @@
 # liri
-# Requirements | # Tech Used
------------- | -------------
-1. Make a Node.js app that functions based off of user input | 1. Node.js
-2. Incorporate Spotify, IMBD API, and BandsInTown API| 2. JavaScript
-3. Read commands: concert-this, movie-this, spotify-this-song, and do-what-it-says | 3.Spotify, IMBD, and BandsInTown API
+
+# Requirements 
+- Make a Node.js app that functions based off of user input 
+- Incorporate Spotify, IMBD API, and BandsInTown API
+- Read commands: concert-this, movie-this, spotify-this-song, and do-what-it-says
+
+ # Tech Used
+ - Node.js
+ - JavaScript
+ - Spotify, IMBD, and BandsInTown API
 
 # How it works: 
 
+1. First user chooses one of the following calls with their desire information 
+    -concert-this (ex. concert-this Frank Ocean)
+    -spotify-this-song (ex. spotify-this-song Forrest Gump)
+    -movie-this (ex. movie-this Big)
+    -do-what-it-says (reads random.txt file)
 
-Code Explanation
-Authentication keys for Twitter are stored in "keys.js", and we are exporting its contents to the main "liri.js" file
-What our app does depends on what the user types, and there are 4 main functions: (1) prints latest tweets, (2) Spotify lookup for a song, (3) OMDb lookup for a movie, and (4) read command and query from another file
-The program makes a request to the Twitter API that is limited by parameters -- username and number of tweets, and we get back a JSON object that includes an array of the 20 most recent tweets; from there, we selectively output using console.log
-The program also makes a request to the Spotify API, and we get back a JSON object that includes everything we need (artist(s), song, preview link, and album)
-The program also makes a HTTP request to the OMDb API using the request NPM module, and we get back a JSON object that includes everything we need (title, year, IMDb rating, language, etc.)
-The program also reads from a file called "random.text" and executes the command and query found there using string and array methods
-Appropriate comments and error-checking has been added
+2. When one of these commands are inputted, it then calls its respective API
+    -concert-this calls the BandsInTown API
+    -spotify-this-song calls the Spotify API
+    -movie-this calls the IMBD API
+    -do-what-it-says reads the external file, random.txt and then executes what is held within that file 
+
+3. Based on what comand is used, the user will get back the following information 
+    -concert-this
+          * Name of the venue
+          * venue location
+          * date of the Event
+
+    -spotify-this-song 
+          * Artist(s)
+          * song's name
+          * a preview link of the song from Spotify, and the album that the song is from
+
+    -movie-this 
+          * Title of the movie.
+          * Year the movie came out.
+          * IMDB Rating of the movie.
+          * Rotten Tomatoes Rating of the movie.
+          * Country where the movie was produced.
+          * Language of the movie.
+          * Plot of the movie.
+          * Actors in the movie.
+
+    -do-what-it-says
+          * executes the query found in random.txt 
+
+
 https://drive.google.com/file/d/1Z1aIp1hfdGriEXaGD_SVS7-848yyVy7R/view
