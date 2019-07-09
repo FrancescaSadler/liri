@@ -12,13 +12,13 @@
 
 # How it works: 
 
-1. First user chooses one of the following calls with their desire information 
+    -First user chooses one of the following calls with their desire information 
     -concert-this (ex. concert-this Frank Ocean)
     -spotify-this-song (ex. spotify-this-song Forrest Gump)
     -movie-this (ex. movie-this Big)
     -do-what-it-says (reads random.txt file)
 
-2. When one of these commands are inputted, it then calls its respective API
+    - When one of these commands are inputted, it then calls its respective API
     -concert-this calls the BandsInTown API
     -spotify-this-song calls the Spotify API
     -movie-this calls the IMBD API
@@ -26,9 +26,9 @@
 
 3. Based on what comand is used, the user will get back the following information 
     3.concert-this
-        3.Name of the venue
-        3. venue location
-        3.  date of the Event
+          Name of the venue
+          venue location
+          date of the Event
 
     -spotify-this-song 
           * Artist(s)
