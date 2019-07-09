@@ -26,9 +26,9 @@
 
 3. Based on what comand is used, the user will get back the following information 
     -concert-this
-          * Name of the venue
-          * venue location
-          * date of the Event
+          - Name of the venue
+          - venue location
+          -  date of the Event
 
     -spotify-this-song 
           * Artist(s)
