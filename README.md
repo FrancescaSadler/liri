@@ -19,23 +19,23 @@
     -do-what-it-says (reads random.txt file)
 
     - When one of these commands are inputted, it then calls its respective API
-    -concert-this calls the BandsInTown API
+    - concert-this calls the BandsInTown API
     -spotify-this-song calls the Spotify API
     -movie-this calls the IMBD API
     -do-what-it-says reads the external file, random.txt and then executes what is held within that file 
 
-3. Based on what comand is used, the user will get back the following information 
-    3.concert-this
-          Name of the venue
-          venue location
-          date of the Event
+    - Based on what comand is used, the user will get back the following information..
+    - concert-this:
+         Name of the venue
+         venue location
+         date of the Event
 
-    -spotify-this-song 
-          * Artist(s)
-          * song's name
-          * a preview link of the song from Spotify, and the album that the song is from
+    -spotify-this-song:
+    -  Artist(s)
+    -  song's name
+    -  a preview link of the song from Spotify, and the album that the song is from
 
-    -movie-this 
+    -movie-this:
           * Title of the movie.
           * Year the movie came out.
           * IMDB Rating of the movie.
@@ -46,7 +46,7 @@
           * Actors in the movie.
 
     -do-what-it-says
-          * executes the query found in random.txt 
+    - executes the query found in random.txt 
 
 
 https://drive.google.com/file/d/1Z1aIp1hfdGriEXaGD_SVS7-848yyVy7R/view
