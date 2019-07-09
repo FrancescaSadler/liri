@@ -36,17 +36,22 @@
 
 - Based on what command is called, the user will get back the following information..
 
-    concert-this:
+         concert-this:
+
          Name of the venue
          Venue location
          Date of the Event
 
-    spotify-this-song:
+
+         spotify-this-song:
+
          Artist(s)
          song's name
          a preview link of the song from Spotify, and the album that the song is from
 
-    movie-this:
+
+         movie-this:
+
          Title of the movie.
          Year the movie came out.
          IMDB Rating of the movie.
@@ -56,7 +61,9 @@
          Plot of the movie.
          Actors in the movie.
 
-    do-what-it-says
+
+         do-what-it-says:
+
          executes the query found in random.txt 
 
 ## Demo 
