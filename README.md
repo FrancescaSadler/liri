@@ -25,10 +25,10 @@
     -do-what-it-says reads the external file, random.txt and then executes what is held within that file 
 
 3. Based on what comand is used, the user will get back the following information 
-    -concert-this
-          - Name of the venue
-          - venue location
-          -  date of the Event
+    3.concert-this
+        3.Name of the venue
+        3. venue location
+        3.  date of the Event
 
     -spotify-this-song 
           * Artist(s)
